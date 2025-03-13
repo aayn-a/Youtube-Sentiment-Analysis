@@ -20,7 +20,7 @@ encoded_labels = encoder.fit_transform(labels)
 X_train, X_test, y_train, y_test = train_test_split(vectorized_comments, encoded_labels, test_size=0.2, random_state=42)
 
 model = keras.Sequential([
-    keras.layers.Input(shape=(200,)),
+    keras.layers.Input(shape=(50,)),
     keras.layers.Embedding(15000, 32),
     keras.layers.Bidirectional(keras.layers.LSTM(64, return_sequences=False)),  # Bi-LSTM layer
     keras.layers.Dense(128, activation="relu"),
